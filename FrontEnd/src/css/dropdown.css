@@ -1,0 +1,80 @@
+/* Basic styles for the dropdown */
+.custom-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-dropdown-btn {
+  color: white !important;
+  font-size: 16px;
+  width: 95%  !important;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 10px !important;
+  background: #10524a;
+}
+
+.custom-dropdown-btn:hover {
+  color: rgb(198, 198, 198);
+}
+
+.custom-dropdown-content {
+  position: absolute;
+  background-color: #002e28;
+  color: aliceblue;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.custom-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.custom-dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Display dropdown content when show class is added */
+.custom-dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 10; /* Ensure it is above other content */
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .custom-dropdown-container {
+    display: block;
+    width: 100%;
+  }
+
+  .custom-dropdown-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .custom-dropdown-content {
+    position: fixed; /* Change to fixed to overlay on other elements */
+    top: 50px; /* Adjust top position based on the button height */
+    left: 0; /* Align to the left edge of the viewport */
+    width: 100%; /* Full width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10; /* Ensure it is above other content */
+  }
+
+  .custom-dropdown-content a {
+    text-align: center;
+  }
+}
